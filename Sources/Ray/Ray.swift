@@ -1,12 +1,9 @@
 @_exported public import Line
 @_exported public import Magnitude
 
-/// A line parameterization restricted to nonnegative finite parameter values.
-/// Direction scale matters, and the origin is included. No metric is selected.
 public struct Ray<Point, Displacement: AdditiveArithmetic> {
     public var line: Line<Point, Displacement>
 
-    /// Restrict an existing anchored line to nonnegative parameters.
     public init(line: Line<Point, Displacement>) { self.line = line }
 
     public var origin: Point {
@@ -16,8 +13,6 @@ public struct Ray<Point, Displacement: AdditiveArithmetic> {
 
     public var direction: Displacement { line.direction }
 
-    /// Evaluate using the supplied affine translation and scalar action.
-    /// Magnitude owns the parameter's nonnegative and finite invariant.
     public func point<Parameter: Magnitude::Scalar, Failure: Swift.Error>(
         at parameter: Magnitude<Parameter>,
         using evaluate: (Point, Displacement, Parameter) throws(Failure) -> Point
