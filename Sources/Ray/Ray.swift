@@ -5,7 +5,9 @@ public struct Ray<Point, Displacement: AdditiveArithmetic> {
     public var line: Line<Point, Displacement>
 
     public init(line: Line<Point, Displacement>) { self.line = line }
+}
 
+extension Ray {
     public var origin: Point {
         get { line.point }
         set { line.point = newValue }
@@ -13,7 +15,7 @@ public struct Ray<Point, Displacement: AdditiveArithmetic> {
 
     public var direction: Displacement { line.direction }
 
-    public func point<Parameter: Magnitude::Scalar, Failure: Swift.Error>(
+    public func point<Parameter: Magnitude::Scalar, Failure: Swift::Error>(
         at parameter: Magnitude<Parameter>,
         using evaluate: (Point, Displacement, Parameter) throws(Failure) -> Point
     ) throws(Failure) -> Point {
