@@ -1,8 +1,8 @@
-import Ray
-import Testing
 import Foundation
 import Point
+import Ray
 import Tagged
+import Testing
 
 @Suite struct `Ray parameterization contracts` {
     @Test func `Zero directions are rejected by the line owner`() {

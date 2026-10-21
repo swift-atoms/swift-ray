@@ -28,8 +28,8 @@ extension Ray: Hashable where Point: Hashable, Displacement: Hashable {}
 extension Ray: Sendable where Point: Sendable, Displacement: Sendable {}
 
 #if !hasFeature(Embedded)
-extension Ray: Encodable where Point: Encodable, Displacement: Encodable {}
-extension Ray: Decodable where Point: Decodable, Displacement: Decodable {}
+    extension Ray: Encodable where Point: Encodable, Displacement: Encodable {}
+    extension Ray: Decodable where Point: Decodable, Displacement: Decodable {}
 #endif
 
 extension Ray {
