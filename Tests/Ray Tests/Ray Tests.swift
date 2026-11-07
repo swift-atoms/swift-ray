@@ -51,7 +51,7 @@ import Testing
     }
 
     @Test func `Evaluation propagates the supplied typed failure`() throws {
-        enum Failure: Error { case overflow }
+        enum Failure: Swift.Error { case overflow }
         let ray = try Ray(origin: 0, direction: 1)
         func evaluate(_ point: Int, _ direction: Int, _ parameter: Int) throws(Failure) -> Int {
             throw .overflow
