@@ -1,5 +1,5 @@
-@_exported public import Line
-@_exported public import Magnitude
+public import Line
+public import Magnitude
 
 public struct Ray<Point, Displacement: AdditiveArithmetic> {
     public var line: Line<Point, Displacement>
